@@ -10,6 +10,7 @@ public class Main {
         personList.add(new Person("Иван", "Иванов", 1234567));
         personList.add(new Person("Сергей", "Сергеев", 1234547));
         personList.add(new Person("Антон", "Антонов", 1264567));
+        personList.add(new Person("Антон", "Антонов", 1264567));
         personList.add(new Person("Дмитрий", "Димов", 1234561));
         personList.add(new Person("Кирилл", "Кириллов", 1232567));
         personList.add(new Person("Александр", "Александров", 1234167));
@@ -29,13 +30,13 @@ public class Main {
             }
         }
 
-        for (int i = 0; i < duplicateFrequencyList.size(); i++) {
-            Person person = duplicateFrequencyList.get(i).getObject();
-            System.out.println("name - " + person.getName());
-            System.out.println("surname - " + person.getSurname());
-            System.out.println("passNumber - " + person.getPassportNumber());
-            System.out.println("Повторов объекта в списке - " + duplicateFrequencyList.get(i).getFrequency());
-        }
+//        for (int i = 0; i < duplicateFrequencyList.size(); i++) {
+//            Person person = duplicateFrequencyList.get(i).getObject();
+//            System.out.println("name - " + person.getName());
+//            System.out.println("surname - " + person.getSurname());
+//            System.out.println("passNumber - " + person.getPassportNumber());
+//            System.out.println("Повторов объекта в списке - " + duplicateFrequencyList.get(i).getFrequency());
+//        }
 
         for (int i = 0; i < duplicateFrequencyList.size(); i++) {
             if (duplicateFrequencyList.get(i).getFrequency() > 0) {

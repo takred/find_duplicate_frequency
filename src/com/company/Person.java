@@ -22,4 +22,17 @@ public class Person {
     public int getPassportNumber() {
         return passportNumber;
     }
+
+    public boolean equals(Person person) {
+        if (!name.equals(person.name)) {
+            return false;
+        }
+        if (!surname.equals(person.surname)) {
+            return false;
+        }
+        if (passportNumber != person.passportNumber) {
+            return false;
+        }
+        return true;
+    }
 }
