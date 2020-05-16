@@ -30,14 +30,6 @@ public class Main {
             }
         }
 
-//        for (int i = 0; i < duplicateFrequencyList.size(); i++) {
-//            Person person = duplicateFrequencyList.get(i).getObject();
-//            System.out.println("name - " + person.getName());
-//            System.out.println("surname - " + person.getSurname());
-//            System.out.println("passNumber - " + person.getPassportNumber());
-//            System.out.println("Повторов объекта в списке - " + duplicateFrequencyList.get(i).getFrequency());
-//        }
-
         for (int i = 0; i < duplicateFrequencyList.size(); i++) {
             if (duplicateFrequencyList.get(i).getFrequency() > 0) {
                 Person person = duplicateFrequencyList.get(i).getObject();
