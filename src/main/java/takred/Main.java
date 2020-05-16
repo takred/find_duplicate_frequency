@@ -20,7 +20,7 @@ public class Main {
 
         List<DuplicateFrequency> duplicateFrequencyList = new ArrayList<>();
         for (int i = 0; i < personList.size(); i++) {
-            duplicateFrequencyList.add(new DuplicateFrequency(personList.get(i), 0));
+            duplicateFrequencyList.add(new DuplicateFrequency(personList.get(i), 1));
             for (int j = 0; j < personList.size(); j++) {
                 if (j != i) {
                     if (personList.get(i).equals(personList.get(j))) {
@@ -31,7 +31,7 @@ public class Main {
         }
 
         for (int i = 0; i < duplicateFrequencyList.size(); i++) {
-            if (duplicateFrequencyList.get(i).getFrequency() > 0) {
+            if (duplicateFrequencyList.get(i).getFrequency() > 1) {
                 Person person = duplicateFrequencyList.get(i).getObject();
                 System.out.println("name - " + person.getName());
                 System.out.println("surname - " + person.getSurname());
