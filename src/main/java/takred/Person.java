@@ -1,4 +1,4 @@
-package com.company;
+package main.java.takred;
 
 public class Person {
     private final String name;

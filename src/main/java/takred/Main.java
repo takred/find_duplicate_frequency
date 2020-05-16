@@ -1,4 +1,4 @@
-package com.company;
+package main.java.takred;
 
 import java.util.ArrayList;
 import java.util.List;
