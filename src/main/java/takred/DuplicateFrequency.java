@@ -1,4 +1,4 @@
-package main.java.takred;
+package takred;
 
 public class DuplicateFrequency {
     private final Person object;
