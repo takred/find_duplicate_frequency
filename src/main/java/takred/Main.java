@@ -25,8 +25,9 @@ public class Main {
             duplicateFrequencyList.add(new DuplicateFrequency(personList.get(i), 1));
             for (int j = 0; j < personList.size(); j++) {
                 if (j != i) {
+                    DuplicateFrequency duplicateFrequency = duplicateFrequencyList.get(i);
                     if (personList.get(i).equals(personList.get(j))) {
-                        duplicateFrequencyList.set(i, duplicateFrequencyList.get(i).setFrequency(duplicateFrequencyList.get(i).getFrequency() + 1));
+                        duplicateFrequencyList.set(i, duplicateFrequency.setFrequency(duplicateFrequency.getFrequency() + 1));
                     }
                 }
             }
@@ -36,7 +37,9 @@ public class Main {
         sortDuplicateFrequencyList.add(duplicateFrequencyList.get(0));
         for (int i = 0; i < duplicateFrequencyList.size(); i++) {
             for (int j = 0; j < sortDuplicateFrequencyList.size(); j++) {
-                if (duplicateFrequencyList.get(i).getPerson().equals(sortDuplicateFrequencyList.get(j).getPerson())) {
+                DuplicateFrequency duplicateFrequency = duplicateFrequencyList.get(i);
+                DuplicateFrequency sortDuplicateFrequency = sortDuplicateFrequencyList.get(j);
+                if (duplicateFrequency.getPerson().equals(sortDuplicateFrequency.getPerson())) {
                     break;
                 }
                 if (j == sortDuplicateFrequencyList.size() - 1) {
@@ -46,12 +49,13 @@ public class Main {
         }
 
         for (int i = 0; i < sortDuplicateFrequencyList.size(); i++) {
-            if (sortDuplicateFrequencyList.get(i).getFrequency() > 1) {
-                Person person = sortDuplicateFrequencyList.get(i).getPerson();
+            DuplicateFrequency sortDuplicateFrequency = sortDuplicateFrequencyList.get(i);
+            if (sortDuplicateFrequency.getFrequency() > 1) {
+                Person person = sortDuplicateFrequency.getPerson();
                 System.out.println("name - " + person.getName());
                 System.out.println("surname - " + person.getSurname());
                 System.out.println("passNumber - " + person.getPassportNumber());
-                System.out.println("Встречается раз - " + sortDuplicateFrequencyList.get(i).getFrequency());
+                System.out.println("Встречается раз - " + sortDuplicateFrequency.getFrequency());
             }
         }
     }
