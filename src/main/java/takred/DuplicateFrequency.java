@@ -1,16 +1,16 @@
 package takred;
 
 public class DuplicateFrequency {
-    private final Person object;
+    private final Person person;
     private final int frequency;
 
-    public DuplicateFrequency(Person object, int frequency) {
-        this.object = object;
+    public DuplicateFrequency(Person person, int frequency) {
+        this.person = person;
         this.frequency = frequency;
     }
 
-    public Person getObject() {
-        return object;
+    public Person getPerson() {
+        return person;
     }
 
     public int getFrequency() {
@@ -18,6 +18,6 @@ public class DuplicateFrequency {
     }
 
     public DuplicateFrequency setFrequency(int frequency) {
-        return new DuplicateFrequency(object, frequency);
+        return new DuplicateFrequency(person, frequency);
     }
 }

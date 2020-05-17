@@ -16,6 +16,8 @@ public class Main {
         personList.add(new Person("Александр", "Александров", 1234167));
         personList.add(new Person("Юлий", "Юлианов", 1834567));
         personList.add(new Person("Валентин", "Валентинов", 1236567));
+        personList.add(new Person("Валентин", "Валентинов", 1236567));
+        personList.add(new Person("Валентин", "Валентинов", 1236567));
         personList.add(new Person("Евлампий", "Евлампов", 9234567));
 
         List<DuplicateFrequency> duplicateFrequencyList = new ArrayList<>();
@@ -30,13 +32,26 @@ public class Main {
             }
         }
 
+        List<DuplicateFrequency> sortDuplicateFrequencyList = new ArrayList<>();
+        sortDuplicateFrequencyList.add(duplicateFrequencyList.get(0));
         for (int i = 0; i < duplicateFrequencyList.size(); i++) {
-            if (duplicateFrequencyList.get(i).getFrequency() > 1) {
-                Person person = duplicateFrequencyList.get(i).getObject();
+            for (int j = 0; j < sortDuplicateFrequencyList.size(); j++) {
+                if (duplicateFrequencyList.get(i).getPerson().equals(sortDuplicateFrequencyList.get(j).getPerson())) {
+                    break;
+                }
+                if (j == sortDuplicateFrequencyList.size() - 1) {
+                    sortDuplicateFrequencyList.add(duplicateFrequencyList.get(i));
+                }
+            }
+        }
+
+        for (int i = 0; i < sortDuplicateFrequencyList.size(); i++) {
+            if (sortDuplicateFrequencyList.get(i).getFrequency() > 1) {
+                Person person = sortDuplicateFrequencyList.get(i).getPerson();
                 System.out.println("name - " + person.getName());
                 System.out.println("surname - " + person.getSurname());
                 System.out.println("passNumber - " + person.getPassportNumber());
-                System.out.println("Повторов объекта в списке - " + duplicateFrequencyList.get(i).getFrequency());
+                System.out.println("Встречается раз - " + sortDuplicateFrequencyList.get(i).getFrequency());
             }
         }
     }
